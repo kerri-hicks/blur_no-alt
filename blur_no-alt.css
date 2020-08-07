@@ -1,0 +1,9 @@
+.block-editor-editor-skeleton__body img[alt=""], img[alt*='.jpg'], img[alt*='.png'], img[alt*='.gif'] {
+	 filter: blur(8px) ;
+	 border: 10px solid red ;
+}
+
+.block-editor-editor-skeleton__body img[alt=""]:hover, img[alt*='.jpg']:hover, img[alt*='.png']:hover, img[alt*='.gif']:hover {
+	filter: blur(0px) ; 
+	border: 0px ;
+}
