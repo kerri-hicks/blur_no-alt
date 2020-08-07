@@ -5,3 +5,5 @@ Socially engineer your WordPress content developers to write alt text for images
 To use: Create a sub-directory in your wp-content/plugins directory called, well, you can call it anything, but how about Blur_No-Alt? And then put these two files into it. 
 
 Then, go into your WordPress dashboard and look at your Plugins list. Activate the plugin, and you're good to go.
+
+Credit for this idea goes to Mark Whittaker at Southern Utah University, who mentioned this strategy in a conversation in the #accessibility channel on the [HighEdWeb](https://www.highedweb.org/) Slack.
