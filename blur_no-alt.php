@@ -2,9 +2,9 @@
 
 /*
 Plugin Name: Blur No-Alt
-Plugin URI: http://dlibwwwcit.services.brown.edu
+Plugin URI: http://kerri.is/
 Description: Blur images in the WP editor interface if they don't have alt text
-Author: Kerri Hicks, Brown University Library
+Author: Kerri Hicks
 */
 
 function blur_admin_theme_style() {
