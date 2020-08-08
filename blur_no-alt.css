@@ -1,9 +1,9 @@
-.block-editor-editor-skeleton__body img[alt=""], img[alt*='.jpg'], img[alt*='.png'], img[alt*='.gif'] {
+.block-editor-editor-skeleton__body img[alt=""], .block-editor-editor-skeleton__body img[alt*='.jpg'], .block-editor-editor-skeleton__body img[alt*='.png'], .block-editor-editor-skeleton__body img[alt*='.gif'] {
 	 filter: blur(8px) ;
 	 border: 10px solid red ;
 }
 
-.block-editor-editor-skeleton__body img[alt=""]:hover, img[alt*='.jpg']:hover, img[alt*='.png']:hover, img[alt*='.gif']:hover {
+.block-editor-editor-skeleton__body img[alt=""]:hover, .block-editor-editor-skeleton__body img[alt*='.jpg']:hover, .block-editor-editor-skeleton__body img[alt*='.png']:hover, .block-editor-editor-skeleton__body img[alt*='.gif']:hover, img.noalt {
 	filter: blur(0px) ; 
 	border: 0px ;
 }
