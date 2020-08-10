@@ -1,0 +1,3 @@
+.editor-post-title::before {
+	content: "📝 Please note: Images without alt text will be blurred. Please add alt text to repair. ";
+}
