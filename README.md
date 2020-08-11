@@ -8,4 +8,6 @@ To use this plugin: Create a sub-directory in your wp-content/plugins directory 
 
 Then, go into your WordPress dashboard and look at your Plugins list. Activate the plugin, and you're good to go.
 
+This plugin creates an options screen under the "Settings" menu item. It lets you toggle on and off the informative message at the top of each editing window.
+
 Credit for this idea goes to Mark Whittaker at Southern Utah University, who mentioned this strategy in a conversation in the #accessibility channel on the [HighEdWeb](https://www.highedweb.org/) Slack.
