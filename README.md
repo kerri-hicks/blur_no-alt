@@ -4,7 +4,7 @@ Socially engineer your WordPress content developers to write alt text for images
 
 Note: This will blur all images in the editing UI that don't have alt text -- even decorative images that SHOULD NOT have alt text, or images that are described elsewhere in the text. If you have such an image, you can give the img element the class "noalt" and it will not blur.
 
-To use this plugin: Create a sub-directory in your wp-content/plugins directory called, well, you can call it anything, but how about Blur_No-Alt? And then put these two files into it. 
+To use this plugin: Create a sub-directory in your wp-content/plugins directory called, well, you can call it anything, but how about Blur_No-Alt? And then put these three files into it. 
 
 Then, go into your WordPress dashboard and look at your Plugins list. Activate the plugin, and you're good to go.
 
