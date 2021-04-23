@@ -10,4 +10,4 @@ Then, go into your WordPress dashboard and look at your Plugins list. Activate t
 
 This plugin creates an options screen under the "Settings" menu item. It lets you toggle on and off the informative message at the top of each editing window.
 
-Credit for this idea goes to Mark Whittaker at Southern Utah University, who mentioned this strategy in a conversation in the #accessibility channel on the [HighEdWeb](https://www.highedweb.org/) Slack.
+Credit for this idea goes to Mark Whittaker at Southern Utah University, who mentioned the idea of a blurring strategy in a conversation in the #accessibility channel on the [HighEdWeb](https://www.highedweb.org/) Slack.
