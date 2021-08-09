@@ -2,7 +2,7 @@
 
 /*
 Plugin Name: Blur No-Alt
-Plugin URI: http://kerri.is/
+Plugin URI: https://kerri.is/
 Description: Blur images in the WP editor interface if they don't have alt text
 Author: Kerri Hicks
 */
