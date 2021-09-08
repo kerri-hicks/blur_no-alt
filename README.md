@@ -1,5 +1,6 @@
 # Blur No-Alt
 
+(Tested up through WordPress 5.74) 
 Socially engineer your WordPress content developers to write alt text for images. This is a WordPress 5 plugin that blurs images in the WordPress editing interface if there is no alt text on the image, or if the alt text is just the filename of the image (evaluating for .jpg, .png, or .gif). Your **users** still see the image just fine, but the **editor** will see a blurred image in the dashboard. Hovering over the image removes the blur effect.
 
 Note: This will blur __all__ images in the editing UI that don't have alt text -- even decorative images that SHOULD NOT have alt text, or images that are described elsewhere in the text. If you have such an image, you can give the img element the class "noalt" and it will not blur.
