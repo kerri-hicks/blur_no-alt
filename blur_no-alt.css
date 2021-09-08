@@ -3,7 +3,29 @@
 	 border: 10px solid red ;
 }
 
+
+.block-editor-editor-skeleton__body img[alt=""]::before {
+    content:"This image has no alt text!";
+}
+
+.block-editor-writing-flow img[alt=""]::before {
+    content:"This image has no alt text!";
+}
+
 .block-editor-editor-skeleton__body img[alt=""]:hover, .block-editor-editor-skeleton__body img[alt*='.jpg']:hover, .block-editor-editor-skeleton__body img[alt*='.png']:hover, .block-editor-editor-skeleton__body img[alt*='.gif']:hover, img.noalt {
 	filter: blur(0px) ; 
 	border: 0px ;
 }
+
+
+
+.block-editor-writing-flow img[alt=""], .block-editor-writing-flow img[alt*='.jpg'], .block-editor-writing-flow img[alt*='.png'], .block-editor-writing-flow img[alt*='.gif'] {
+	 filter: blur(8px) ;
+	 border: 10px solid red ;
+}
+
+.block-editor-writing-flow img[alt=""]:hover, .block-editor-writing-flow img[alt*='.jpg']:hover, .block-editor-writing-flow img[alt*='.png']:hover, .block-editor-writing-flow img[alt*='.gif']:hover, img.noalt {
+	filter: blur(0px) ; 
+	border: 0px ;
+}
+    
