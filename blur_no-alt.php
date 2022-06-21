@@ -37,7 +37,6 @@ class BlurNoAltMessageDisplay {
 		<div class="wrap">
 			<h2>Blur No-Alt Message Display</h2>
 			<p>Show/hide the "Blurred images require alt text" banner across the top of editor pages</p>
-			<?php settings_errors(); ?>
 
 			<form method="post" action="options.php">
 				<?php
