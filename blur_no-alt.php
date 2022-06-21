@@ -15,10 +15,14 @@ add_action('admin_enqueue_scripts', 'blur_admin_theme_style') ;
 
 class BlurNoAltMessageDisplay {
 	private $blur_no_alt_message_display_options;
+	private $blur_no_alt_message_display_options_default = array(
+		'show_or_hide_0' => 'Hide'
+	);
 
 	public function __construct() {
 		add_action( 'admin_menu', array( $this, 'blur_no_alt_message_display_add_plugin_page' ) );
 		add_action( 'admin_init', array( $this, 'blur_no_alt_message_display_page_init' ) );
+		add_action('admin_enqueue_scripts', array( $this, 'blur_admin_theme_style_blur_message') );
 	}
 
 	public function blur_no_alt_message_display_add_plugin_page() {
@@ -37,7 +41,6 @@ class BlurNoAltMessageDisplay {
 		<div class="wrap">
 			<h2>Blur No-Alt Message Display</h2>
 			<p>Show/hide the "Blurred images require alt text" banner across the top of editor pages</p>
-			<?php settings_errors(); ?>
 
 			<form method="post" action="options.php">
 				<?php
@@ -53,7 +56,10 @@ class BlurNoAltMessageDisplay {
 		register_setting(
 			'blur_no_alt_message_display_option_group', // option_group
 			'blur_no_alt_message_display_option_name', // option_name
-			array( $this, 'blur_no_alt_message_display_sanitize' ) // sanitize_callback
+			array(
+				'sanitize_callback' => array( $this, 'blur_no_alt_message_display_sanitize' ),
+				'default' => $this->blur_no_alt_message_display_options_default,
+			)
 		);
 
 		add_settings_section(
@@ -73,12 +79,13 @@ class BlurNoAltMessageDisplay {
 	}
 
 	public function blur_no_alt_message_display_sanitize($input) {
-		$sanitary_values = array();
+		$sanitized = array();
+		$allowed_values = array( 'Show', 'Hide' );
 		if ( isset( $input['show_or_hide_0'] ) ) {
-			$sanitary_values['show_or_hide_0'] = $input['show_or_hide_0'];
+			$sanitized['show_or_hide_0'] = in_array( $input['show_or_hide_0'], $allowed_values ) ? $input['show_or_hide_0'] : null;
 		}
 
-		return $sanitary_values;
+		return $sanitized;
 	}
 
 	public function blur_no_alt_message_display_section_info() {
@@ -92,19 +99,21 @@ class BlurNoAltMessageDisplay {
 		<label for="show_or_hide_0-1"><input type="radio" name="blur_no_alt_message_display_option_name[show_or_hide_0]" id="show_or_hide_0-1" value="Hide" <?php echo $checked; ?>> Hide</label></fieldset> <?php
 	}
 
-}
-if (is_admin())
-	$blur_no_alt_message_display = new BlurNoAltMessageDisplay();
+	public function blur_admin_theme_style_blur_message() {
+		$blur_no_alt_message_display_options = get_option(
+			'blur_no_alt_message_display_option_name',
+			$this->blur_no_alt_message_display_options_default
+		); // Array of All Options
 
+		$show_or_hide_0 = $blur_no_alt_message_display_options['show_or_hide_0']; // Show or hide?
 
-$blur_no_alt_message_display_options = get_option( 'blur_no_alt_message_display_option_name' ); // Array of All Options
- $show_or_hide_0 = $blur_no_alt_message_display_options['show_or_hide_0']; // Show or hide?
-
-if($show_or_hide_0 !== "Hide"){
-	function blur_admin_theme_style_blur_message() {
-	    wp_enqueue_style('blur-admin-theme-blur-message', plugins_url('blur_no-alt_message.css', __FILE__)) ;
+		if ( $show_or_hide_0 !== "Hide" ) {
+		    wp_enqueue_style('blur-admin-theme-blur-message', plugins_url('blur_no-alt_message.css', __FILE__)) ;
+		}
 	}
-	add_action('admin_enqueue_scripts', 'blur_admin_theme_style_blur_message') ;
-} ;
 
-?>
+}
+
+if ( is_admin() ) {
+	$blur_no_alt_message_display = new BlurNoAltMessageDisplay();
+}
