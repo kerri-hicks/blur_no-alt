@@ -13,7 +13,7 @@ Blur images in the WordPress editor interface if they don't have alt text. Socia
 
 This plugin blurs images in the WordPress Block Editor interface if there is no alt text on the image, or if the alt text contains .jpg, .png, or .gif. **Site visitors** still see the image just fine, but **editors** will see a blurred image in the dashboard. Hovering or selecting the image removes the blur effect.
 
-Most styles work in all "modern browsers" (not Internet Explorer). Cropped Media & Text blocks only work in very recent browsers that support the `:has()` psuedo selector.
+Most styles work in all "modern browsers" (not Internet Explorer). Media & Text blocks with the "crop" setting only work in very recent browsers that support the `:has()` psuedo selector.
 
 ### Note: Unblurring Decorative Images
 
@@ -34,3 +34,20 @@ To use this plugin:
 ## Credits
 
 Credit for this idea goes to Mark Whittaker at Southern Utah University, who mentioned the idea of a blurring strategy in a conversation in the #accessibility channel on the [HighEdWeb](https://www.highedweb.org/) Slack.
+
+## Changelog
+
+### v0.92 (22 June 2022)
+
+- Introduce plugin versioning to make it easier to see changes to plugin
+- Resolve notice after first installing plugin by providing default options
+- Sanitize single setting value
+- Improve support for media blocks in the block editor
+- Make transition between blurred and unblurred less jarring
+- Refactor CSS and remove rules that didn't do anything
+- Fix support for unblurring images with `noalt` class
+- Don't blur images in blocks with the `is-selected` class (adds implicit keyboard support)
+- Improve display of message at the top of the editor
+- Revise readme to mostly follow wp.org guidelines
+- Add new plugin headers for clarity and to prevent accidental updates from wordpress.org repository
+- Support translating all plugin strings
