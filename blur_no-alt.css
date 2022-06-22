@@ -7,6 +7,7 @@
 }
 
 .block-editor-writing-flow img:is([alt=""],[alt*='.jpg'],[alt*='.png'],[alt*='.gif']):hover,
+.block-editor-writing-flow .wp-block-cover:hover img:is([alt=""],[alt*='.jpg'],[alt*='.png'],[alt*='.gif']),
 .block-editor-writing-flow .is-selected img:is([alt=""],[alt*='.jpg'],[alt*='.png'],[alt*='.gif']),
 .block-editor-writing-flow .noalt img,
 .block-editor-writing-flow img.noalt {
