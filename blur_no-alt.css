@@ -8,8 +8,7 @@
 
 .block-editor-writing-flow img:is([alt=""],[alt*='.jpg'],[alt*='.png'],[alt*='.gif']):hover,
 .block-editor-writing-flow .wp-block-cover:hover img:is([alt=""],[alt*='.jpg'],[alt*='.png'],[alt*='.gif']),
-.block-editor-writing-flow .is-selected img:is([alt=""],[alt*='.jpg'],[alt*='.png'],[alt*='.gif']),
-.block-editor-writing-flow .noalt img,
+.block-editor-writing-flow :is(.is-selected,.noalt) img:is([alt=""],[alt*='.jpg'],[alt*='.png'],[alt*='.gif']),
 .block-editor-writing-flow img.noalt {
 	filter: blur(0px) ; 
 	outline: 0;
@@ -17,10 +16,7 @@
     
 /* Media & Text with Image Crop Setting */
 /* Selectors must be separate in order to avoid breaking other behavior for older browsers */
-.block-editor-writing-flow .wp-block-media-text__media:has(img[alt=""]),
-.block-editor-writing-flow .wp-block-media-text__media:has(img[alt*=".jpg"]),
-.block-editor-writing-flow .wp-block-media-text__media:has(img[alt*=".png"]),
-.block-editor-writing-flow .wp-block-media-text__media:has(img[alt*=".gif"]) {
+.block-editor-writing-flow .wp-block-media-text__media:has(img:is([alt=""],[alt*='.jpg'],[alt*='.png'],[alt*='.gif'])) {
 	clip-path: inset(0);
 	filter: blur(8px);
 	outline: 10px solid red;
@@ -28,14 +24,8 @@
 	transition: filter .125s, outline .125s;
 }
 
-.block-editor-writing-flow .wp-block-media-text:hover .wp-block-media-text__media:has(img[alt=""]),
-.block-editor-writing-flow .wp-block-media-text.is-selected .wp-block-media-text__media:has(img[alt=""]),
-.block-editor-writing-flow .wp-block-media-text:hover .wp-block-media-text__media:has(img[alt*=".jpg"]),
-.block-editor-writing-flow .wp-block-media-text.is-selected .wp-block-media-text__media:has(img[alt*=".jpg"]),
-.block-editor-writing-flow .wp-block-media-text:hover .wp-block-media-text__media:has(img[alt*=".png"]),
-.block-editor-writing-flow .wp-block-media-text.is-selected .wp-block-media-text__media:has(img[alt*=".png"]),
-.block-editor-writing-flow .wp-block-media-text:hover .wp-block-media-text__media:has(img[alt*=".gif"]),
-.block-editor-writing-flow .wp-block-media-text.is-selected .wp-block-media-text__media:has(img[alt*=".gif"]),
+.block-editor-writing-flow .wp-block-media-text:hover .wp-block-media-text__media:has(img:is([alt=""],[alt*='.jpg'],[alt*='.png'],[alt*='.gif'])),
+.block-editor-writing-flow .wp-block-media-text.is-selected .wp-block-media-text__media:has(img:is([alt=""],[alt*='.jpg'],[alt*='.png'],[alt*='.gif'])),
 .block-editor-writing-flow .wp-block-media-text.noalt .wp-block-media-text__media {
 	filter: blur(0px) ; 
 	outline: 0;
