@@ -1,10 +1,16 @@
 <?php
-
-/*
-Plugin Name: Blur No-Alt
-Plugin URI: https://kerri.is/
-Description: Blur images in the WP editor interface if they don't have alt text
-Author: Kerri Hicks
+/**
+* Plugin Name: Blur No-Alt
+* Plugin URI: https://github.com/kerri-hicks/blur_no-alt
+* Version: 0.92
+* Requires at least: 5.0
+* Author: Kerri Hicks
+* Author URI: https://kerri.is/
+* License: GPL v3 or later
+* License URI: https://www.gnu.org/licenses/gpl-3.0.html
+* Description: Blur images in the WordPress editor interface if they don't have alt text. Socially engineer your WordPress content developers to write alt text for images.
+* Text Domain: blur-no-alt
+* Update URI: false
 */
 
 function blur_admin_theme_style() {
