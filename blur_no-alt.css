@@ -1,7 +1,4 @@
-.block-editor-writing-flow img[alt=""],
-.block-editor-writing-flow img[alt*='.jpg'],
-.block-editor-writing-flow img[alt*='.png'],
-.block-editor-writing-flow img[alt*='.gif'] {
+.block-editor-writing-flow img:is([alt=""],[alt*='.jpg'],[alt*='.png'],[alt*='.gif']) {
 	clip-path: inset(0);
 	filter: blur(8px);
 	outline: 10px solid red;
@@ -9,14 +6,8 @@
 	transition: filter .125s, outline .125s;
 }
 
-.block-editor-writing-flow img[alt=""]:hover,
-.block-editor-writing-flow .is-selected img[alt=""],
-.block-editor-writing-flow img[alt*='.jpg']:hover,
-.block-editor-writing-flow .is-selected img[alt*='.jpg'],
-.block-editor-writing-flow img[alt*='.png']:hover,
-.block-editor-writing-flow .is-selected img[alt*='.png'],
-.block-editor-writing-flow img[alt*='.gif']:hover,
-.block-editor-writing-flow .is-selected img[alt*='.gif'],
+.block-editor-writing-flow img:is([alt=""],[alt*='.jpg'],[alt*='.png'],[alt*='.gif']):hover,
+.block-editor-writing-flow .is-selected img:is([alt=""],[alt*='.jpg'],[alt*='.png'],[alt*='.gif']),
 .block-editor-writing-flow .noalt img,
 .block-editor-writing-flow img.noalt {
 	filter: blur(0px) ; 
