@@ -1,3 +1,10 @@
 .editor-post-title::before {
-	content: "📝 Please note: Images without alt text will be blurred. Please add alt text to repair. ";
+	content: "ℹ Images without alt text will be blurred. Add alt text or the noalt CSS class to repair.";
+	display: block;
+	font-size: 1rem;
+	background-color: LemonChiffon;
+	border: 1px solid DarkKhaki;
+	padding: 1em;
+	margin-bottom: 1em;
+	text-transform: none;
 }
