@@ -1,10 +1,16 @@
 <?php
-
-/*
-Plugin Name: Blur No-Alt
-Plugin URI: https://kerri.is/
-Description: Blur images in the WP editor interface if they don't have alt text
-Author: Kerri Hicks
+/**
+* Plugin Name: Blur No-Alt
+* Plugin URI: https://github.com/kerri-hicks/blur_no-alt
+* Version: 0.92
+* Requires at least: 5.0
+* Author: Kerri Hicks
+* Author URI: https://kerri.is/
+* License: GPL v3 or later
+* License URI: https://www.gnu.org/licenses/gpl-3.0.html
+* Description: Blur images in the WordPress editor interface if they don't have alt text. Socially engineer your WordPress content developers to write alt text for images.
+* Text Domain: blur-no-alt
+* Update URI: false
 */
 
 function blur_admin_theme_style() {
@@ -27,8 +33,8 @@ class BlurNoAltMessageDisplay {
 
 	public function blur_no_alt_message_display_add_plugin_page() {
 		add_options_page(
-			'Blur No-Alt Message Display', // page_title
-			'Blur No-Alt Message Display', // menu_title
+			__( 'Blur No-Alt Message Display', 'blur-no-alt' ), // page_title
+			__( 'Blur No-Alt Message Display', 'blur-no-alt' ), // menu_title
 			'manage_options', // capability
 			'blur-no-alt-message-display', // menu_slug
 			array( $this, 'blur_no_alt_message_display_create_admin_page' ) // function
@@ -39,9 +45,7 @@ class BlurNoAltMessageDisplay {
 		$this->blur_no_alt_message_display_options = get_option( 'blur_no_alt_message_display_option_name' ); ?>
 
 		<div class="wrap">
-			<h2>Blur No-Alt Message Display</h2>
-			<p>Show/hide the "Blurred images require alt text" banner across the top of editor pages</p>
-
+			<h2><?php esc_html_e( 'Blur No-Alt Message Display', 'blur-no-alt' ); ?></h2>
 			<form method="post" action="options.php">
 				<?php
 					settings_fields( 'blur_no_alt_message_display_option_group' );
@@ -64,14 +68,14 @@ class BlurNoAltMessageDisplay {
 
 		add_settings_section(
 			'blur_no_alt_message_display_setting_section', // id
-			'Settings', // title
+			__( 'Editor Settings', 'blur-no-alt' ), // title
 			array( $this, 'blur_no_alt_message_display_section_info' ), // callback
 			'blur-no-alt-message-display-admin' // page
 		);
 
 		add_settings_field(
 			'show_or_hide_0', // id
-			'Show or hide?', // title
+			__( 'Message explaining blurred images at top of editor page', 'blur-no-alt' ), // title
 			array( $this, 'show_or_hide_0_callback' ), // callback
 			'blur-no-alt-message-display-admin', // page
 			'blur_no_alt_message_display_setting_section' // section
@@ -94,9 +98,9 @@ class BlurNoAltMessageDisplay {
 
 	public function show_or_hide_0_callback() {
 		?> <fieldset><?php $checked = ( isset( $this->blur_no_alt_message_display_options['show_or_hide_0'] ) && $this->blur_no_alt_message_display_options['show_or_hide_0'] === 'Show' ) ? 'checked' : '' ; ?>
-		<label for="show_or_hide_0-0"><input type="radio" name="blur_no_alt_message_display_option_name[show_or_hide_0]" id="show_or_hide_0-0" value="Show" <?php echo $checked; ?>> Show</label><br>
+		<label for="show_or_hide_0-0"><input type="radio" name="blur_no_alt_message_display_option_name[show_or_hide_0]" id="show_or_hide_0-0" value="Show" <?php echo $checked; ?>> <?php esc_html_e( 'Show', 'blur-no-alt' ); ?></label><br>
 		<?php $checked = ( isset( $this->blur_no_alt_message_display_options['show_or_hide_0'] ) && $this->blur_no_alt_message_display_options['show_or_hide_0'] === 'Hide' ) ? 'checked' : '' ; ?>
-		<label for="show_or_hide_0-1"><input type="radio" name="blur_no_alt_message_display_option_name[show_or_hide_0]" id="show_or_hide_0-1" value="Hide" <?php echo $checked; ?>> Hide</label></fieldset> <?php
+		<label for="show_or_hide_0-1"><input type="radio" name="blur_no_alt_message_display_option_name[show_or_hide_0]" id="show_or_hide_0-1" value="Hide" <?php echo $checked; ?>> <?php esc_html_e( 'Hide', 'blur-no-alt' ); ?></label></fieldset> <?php
 	}
 
 	public function blur_admin_theme_style_blur_message() {
