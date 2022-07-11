@@ -1,13 +1,15 @@
 # Blur No-Alt
 
-Author: [Kerri Hicks](https://kerri.is)
-Contributors: [Mark Root-Wiley](https://MRWweb.com)
-Stable tag: 0.92
-Tested up to: 6.0
-License: GPLv3 or later
-License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Author: [Kerri Hicks](https://kerri.is)  
+Contributors: [Mark Root-Wiley](https://MRWweb.com)  
+Stable tag: 0.92  
+Tested up to: 6.0  
+License: GPLv3 or later  
+License URI: https://www.gnu.org/licenses/gpl-3.0.html  
 
 Blur images in the WordPress editor interface if they don't have alt text. Socially engineer your WordPress content developers to write alt text for images.
+
+(Looking for something like this, but for Drupal? Take a look at [Carole Mah's Blur No-Alt **for Drupal** fork](https://github.com/c-e-mah/blur_no_alt).)
 
 ## Description
 
