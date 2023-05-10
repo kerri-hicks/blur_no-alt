@@ -1,0 +1,34 @@
+img:is([alt=""],[alt*='.jpg'],[alt*='.png'],[alt*='.gif']) {
+	clip-path: var(--blur-no-alt--clip-path, inset(0)) !important;
+	filter: var(--blur-no-alt--filter, blur(8px)) !important;
+	outline: var(--blur-no-alt--outline, 10px solid red) !important;
+	outline-offset: var(--blur-no-alt--outline, 10px solid red) !important
+	transition: var(--blur-no-alt--transition, filter .125s, outline .125s) !important;
+}
+
+img:is([alt=""],[alt*='.jpg'],[alt*='.png'],[alt*='.gif']):hover,
+.wp-block-cover:hover img:is([alt=""],[alt*='.jpg'],[alt*='.png'],[alt*='.gif']),
+:is(.is-selected,.noalt) img:is([alt=""],[alt*='.jpg'],[alt*='.png'],[alt*='.gif']),
+img.noalt,
+img[aria-hidden="true"],
+[aria-hidden="true"] img {
+	filter: var(--blur-no-alt--filter--hover, blur(0px) ) !important; 
+	outline: var( --blur-no-alt--outline--hover, 0 ) !important;
+}
+    
+/* Media & Text with Image Crop Setting */
+/* Selectors must be separate in order to avoid breaking other behavior for older browsers */
+.wp-block-media-text__media:has(img:is([alt=""],[alt*='.jpg'],[alt*='.png'],[alt*='.gif'])) {
+	clip-path: var(--blur-no-alt--clip-path, inset(0)) !important;
+	filter: var(--blur-no-alt--filter, blur(8px)) !important;
+	outline: var(--blur-no-alt--outline, 10px solid red) !important;
+	outline-offset: var(--blur-no-alt--outline, 10px solid red) !important
+	transition: var(--blur-no-alt--transition, filter .125s, outline .125s) !important;
+}
+
+.wp-block-media-text:hover .wp-block-media-text__media:has(img:is([alt=""],[alt*='.jpg'],[alt*='.png'],[alt*='.gif'])),
+.wp-block-media-text.is-selected .wp-block-media-text__media:has(img:is([alt=""],[alt*='.jpg'],[alt*='.png'],[alt*='.gif'])),
+.wp-block-media-text.noalt .wp-block-media-text__media {
+	filter: var(--blur-no-alt--filter--hover, blur(0px) ) !important; 
+	outline: var( --blur-no-alt--outline--hover, 0 ) !important;
+}
