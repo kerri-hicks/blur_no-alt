@@ -11,7 +11,7 @@
 .block-editor-writing-flow :is(.is-selected,.noalt) img:is([alt=""],[alt*='.jpg'],[alt*='.png'],[alt*='.gif']),
 .block-editor-writing-flow img.noalt {
 	filter: var(--blur-no-alt--filter--hover, blur(0px) ) !important; 
-	outline: var( --blur-no-alt--outline--hover, 0 ) !important;
+	outline: var(--blur-no-alt--outline--hover, 0 ) !important;
 }
     
 /* Media & Text with Image Crop Setting */
@@ -28,5 +28,5 @@
 .block-editor-writing-flow .wp-block-media-text.is-selected .wp-block-media-text__media:has(img:is([alt=""],[alt*='.jpg'],[alt*='.png'],[alt*='.gif'])),
 .block-editor-writing-flow .wp-block-media-text.noalt .wp-block-media-text__media {
 	filter: var(--blur-no-alt--filter--hover, blur(0px) ) !important; 
-	outline: var( --blur-no-alt--outline--hover, 0 ) !important;
+	outline: var(--blur-no-alt--outline--hover, 0 ) !important;
 }
