@@ -14,7 +14,7 @@
 */
 
 function blur_admin_theme_style() {
-    wp_enqueue_style('blur-admin-theme', plugins_url('blur_no-alt.css', __FILE__)) ;
+    wp_enqueue_style('blur-admin-theme', plugins_url('css/blur-no-alt-editor.css', __FILE__)) ;
 }
 add_action('admin_enqueue_scripts', 'blur_admin_theme_style') ;
 
@@ -112,7 +112,7 @@ class BlurNoAltMessageDisplay {
 		$show_or_hide_0 = $blur_no_alt_message_display_options['show_or_hide_0']; // Show or hide?
 
 		if ( $show_or_hide_0 !== "Hide" ) {
-		    wp_enqueue_style('blur-admin-theme-blur-message', plugins_url('blur_no-alt_message.css', __FILE__)) ;
+		    wp_enqueue_style('blur-admin-theme-blur-message', plugins_url('css/blur-no-alt-message.css', __FILE__)) ;
 		}
 	}
 
