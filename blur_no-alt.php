@@ -62,8 +62,8 @@ class BlurNoAltMessageDisplay {
 	 */
 	public function blur_no_alt_message_display_add_plugin_page() {
 		add_options_page(
-			__( 'Blur No-Alt Settings', 'blur-no-alt' ),
-			__( 'Blur No-Alt', 'blur-no-alt' ),
+			esc_html__( 'Blur No-Alt Settings', 'blur-no-alt' ),
+			esc_html__( 'Blur No-Alt', 'blur-no-alt' ),
 			'manage_options',
 			'blur-no-alt-message-display',
 			array( $this, 'blur_no_alt_message_display_create_admin_page' ),
@@ -97,7 +97,7 @@ class BlurNoAltMessageDisplay {
 			'blur_no_alt_message_display_option_group',
 			'blur_no_alt_message_display_option_name',
 			array(
-				'description'       => 'All settings for the Blur No-Alt plugin',
+				'description'       => esc_html_x( 'All settings for the Blur No-Alt plugin', 'Description property of register_setting function', 'blur-no-alt' ),
 				'type'              => 'array',
 				'sanitize_callback' => array( $this, 'blur_no_alt_message_display_sanitize' ),
 				'default'           => $this->blur_no_alt_message_display_options_default,
@@ -106,21 +106,21 @@ class BlurNoAltMessageDisplay {
 
 		add_settings_section(
 			'blur_no_alt_message_display_setting_section',
-			__( 'Editor Settings', 'blur-no-alt' ),
+			esc_html__( 'Editor Settings', 'blur-no-alt' ),
 			false,
 			'blur-no-alt-message-display-admin'
 		);
 
 		add_settings_section(
 			'blur_no_alt_front_end_blur_setting_section',
-			__( 'Front-end Settings', 'blur-no-alt' ),
+			esc_html__( 'Front-end Settings', 'blur-no-alt' ),
 			array( $this, 'blur_no_alt_front_end_section_callback' ),
 			'blur-no-alt-message-display-admin',
 		);
 
 		add_settings_field(
 			'show_or_hide_0',
-			__( 'Message above Block Editor title explaining blurred images', 'blur-no-alt' ),
+			esc_html__( 'Message above Block Editor title explaining blurred images', 'blur-no-alt' ),
 			array( $this, 'show_or_hide_setting_callback' ),
 			'blur-no-alt-message-display-admin',
 			'blur_no_alt_message_display_setting_section'
@@ -128,7 +128,7 @@ class BlurNoAltMessageDisplay {
 
 		add_settings_field(
 			'blur_no_alt_on_front',
-			__( 'EXPERIMENTAL! Front-end blurred images', 'blur-no-alt' ),
+			esc_html__( 'EXPERIMENTAL! Front-end blurred images', 'blur-no-alt' ),
 			array( $this, 'blur_no_alt_on_front_setting_callback' ),
 			'blur-no-alt-message-display-admin',
 			'blur_no_alt_front_end_blur_setting_section'
@@ -158,7 +158,10 @@ class BlurNoAltMessageDisplay {
 	 * Output help text about front-end blur capabilities filter
 	 */
 	public function blur_no_alt_front_end_section_callback() {
-		echo '<p>' . wp_kses_post( __( 'When enabled, this option applies to all users with <code>edit_pages</code> capability. Customize capability with <code>blur_no_alt_front_end_blur_capability</code> filter.' ) ) . '</p>';
+		echo '<p>' . wp_kses(
+				__( 'When enabled, this option applies to all users with <code>edit_pages</code> capability. Customize capability with <code>blur_no_alt_front_end_blur_capability</code> filter.' ),
+				array( 'code' => array() )
+			) . '</p>';
 	}
 
 	/**
