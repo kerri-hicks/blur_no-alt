@@ -32,7 +32,7 @@ This plugin's settings are found in "Settings" > "Blur No-Alt" in the WordPress 
 - Toggle the informational message about blurred images above the title in the block editor
 - Toggle whether logged-in users see blurred images when viewing the front-end of the site
 
-When the front-end styles are enabled, developers can customize which users see the blurred images with the `blur_no_alt_front_end_blur_capability` filter (default: `edit_pages`)
+When the front-end styles are enabled, developers can customize which users see the blurred images with the `blur_no_alt_front_end_blur_capability` filter (default: `edit_pages`).
 
 
 ## Installation
