@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Blur No-Alt" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd">
+
+	<description>Apply WP code sniffs with minor customizations to the Blur No-Alt PHP plugin file.</description>
+
+    <file>./blur_no-alt.php</file>
+
+    <rule ref="WordPress">
+        <exclude name="WordPress.Files.Filename"/>
+    </rule>
+
+    <config name="minimum_supported_wp_version" value="5.0"/>
+</ruleset>

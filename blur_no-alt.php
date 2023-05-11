@@ -1,5 +1,11 @@
 <?php
 /**
+ * Blur No-Alt
+ *
+ * @package     blur_no-alt
+ * @author      Kerri Hicks
+ * @license     GPL-3.0+
+ *
  * Plugin Name: Blur No-Alt
  * Plugin URI: https://github.com/kerri-hicks/blur_no-alt
  * Version: 0.93
@@ -17,8 +23,25 @@
  * Plugin class
  */
 class BlurNoAltMessageDisplay {
+	/**
+	 * Plugin Version
+	 *
+	 * @var string
+	 */
 	private $plugin_version = '0.93';
+
+	/**
+	 * Used to store plugin options?
+	 *
+	 * @var array
+	 */
 	private $blur_no_alt_message_display_options;
+
+	/**
+	 * Default options for the plugin when not or partially defined
+	 *
+	 * @var array
+	 */
 	private $blur_no_alt_message_display_options_default = array(
 		'show_or_hide_0' => 0,
 		'blur_on_front'  => 0,
@@ -179,7 +202,7 @@ class BlurNoAltMessageDisplay {
 		/* Admin styles to blur images */
 		wp_enqueue_style(
 			'blur-admin-theme',
-			plugins_url( 'css/blur-no-alt-editor.css', __FILE__ ),
+			plugins_url( 'css/blur_no-alt_editor.css', __FILE__ ),
 			array(),
 			$this->plugin_version,
 		);
@@ -195,7 +218,7 @@ class BlurNoAltMessageDisplay {
 		if ( 'Show' === $show_or_hide_0 ) {
 			wp_enqueue_style(
 				'blur-admin-theme-blur-message',
-				plugins_url( 'css/blur-no-alt-message.css', __FILE__ ),
+				plugins_url( 'css/blur_no-alt_message.css', __FILE__ ),
 				array(),
 				$this->plugin_version
 			);
@@ -216,7 +239,7 @@ class BlurNoAltMessageDisplay {
 		if ( isset( $plugin_options['blur_on_front'] ) && $plugin_options['blur_on_front'] && current_user_can( esc_attr( $front_end_cap ) ) ) {
 			wp_enqueue_style(
 				'blur-front-styles',
-				plugins_url( 'css/blur-no-alt-front.css', __FILE__ ),
+				plugins_url( 'css/blur_no-alt_front.css', __FILE__ ),
 				array(),
 				$this->plugin_version,
 			);
