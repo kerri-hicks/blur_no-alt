@@ -27,17 +27,22 @@ On the front-end, images that are marked with `[aria-hidden="true"]` (or are a d
 
 ### Settings
 
-- Toggle informational message about blurred images above the title in the editor
+This plugin's settings are found in "Settings" > "Blur No-Alt" in the WordPress admin menu. The plugin provides two settings for customizing the plugin's behavior:
+
+- Toggle the informational message about blurred images above the title in the block editor
 - Toggle whether logged-in users see blurred images when viewing the front-end of the site
+
+When the front-end styles are enabled, developers can customize which users see the blurred images with the `blur_no_alt_front_end_blur_capability` filter (default: `edit_pages`)
 
 
 ## Installation
 
 To use this plugin:
 
-1. Create a sub-directory in your wp-content/plugins directory called, well, you can call it anything, but how about Blur_No-Alt?
-2. put all of these files into it. 
-3. Go into your WordPress dashboard and look at your Plugins list. Activate the plugin, and you're good to go.
+1. Create a sub-directory in your `wp-content/plugins` directory called, well, you can call it anything, but how about `Blur_No-Alt`?
+2. Put all of these files into it. 
+3. Go into your WordPress dashboard and look at your Plugins list. Activate the plugin, and you're good to go!
+4. To customize the plugin settings, go to "Settings" > "Blur No-Alt" in the admin menu.
 
 ## Credits
 
@@ -45,12 +50,11 @@ Credit for this idea goes to Mark Whittaker at Southern Utah University, who men
 
 ## Changelog
 
-### v0.93 (10 May 2023)
-- ⚠ Warning: Plugin file renaming may deactivate plugin when upgrading to v0.93.
+### v0.93 (11 May 2023)
 - NEW: Option to blur images on the front-end for logged-in users with `edit_pages` capability. Option added to control this feature. Use `blur_no_alt_front_end_blur_capability` filter to adjust capability required to see blurred images.
 - NEW: All styles now use `!important` to ensure they apply correctly. There are new custom properties to make it easy to customize styles for images with no alt text: `--blur-no-alt--clip-path`, `--blur-no-alt--filter`, `--blur-no-alt--outline`, `--blur-no-alt--outline`, `--blur-no-alt--transition`, `--blur-no-alt--filter--hover`, `--blur-no-alt--outline--hover`
-- Switch settings to use single checkbox instead of two radio buttons (will inherit existing options)
-- Version enqueued styles to ensure old versions of styles aren't cached
+- Switch settings to use single checkbox instead of two radio buttons
+- Set version parameter for enqueued styles to ensure old versions of styles aren't cached
 - Refactor plugin to follow WordPress coding standards (minor security hardening)
 - Improve file organization with `css` folder
 - Tested with WordPress 6.2
