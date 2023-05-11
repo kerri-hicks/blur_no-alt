@@ -2,7 +2,7 @@
 	clip-path: var(--blur-no-alt--clip-path, inset(0)) !important;
 	filter: var(--blur-no-alt--filter, blur(8px)) !important;
 	outline: var(--blur-no-alt--outline, 10px solid red) !important;
-	outline-offset: var(--blur-no-alt--outline, 10px solid red) !important
+	outline-offset: var(--blur-no-alt--outline-offset, 10px solid red) !important;
 	transition: var(--blur-no-alt--transition, filter .125s, outline .125s) !important;
 }
 
@@ -20,7 +20,7 @@
 	clip-path: var(--blur-no-alt--clip-path, inset(0)) !important;
 	filter: var(--blur-no-alt--filter, blur(8px)) !important;
 	outline: var(--blur-no-alt--outline, 10px solid red) !important;
-	outline-offset: var(--blur-no-alt--outline, 10px solid red) !important
+	outline-offset: var(--blur-no-alt--outline-offset, 10px solid red) !important;
 	transition: var(--blur-no-alt--transition, filter .125s, outline .125s) !important;
 }
 

@@ -2,7 +2,7 @@ img:is([alt=""],[alt*='.jpg'],[alt*='.png'],[alt*='.gif']) {
 	clip-path: var(--blur-no-alt--clip-path, inset(0)) !important;
 	filter: var(--blur-no-alt--filter, blur(8px)) !important;
 	outline: var(--blur-no-alt--outline, 10px solid red) !important;
-	outline-offset: var(--blur-no-alt--outline, 10px solid red) !important
+	outline-offset: var(--blur-no-alt--outline-offset, 10px solid red) !important;
 	transition: var(--blur-no-alt--transition, filter .125s, outline .125s) !important;
 }
 
@@ -11,7 +11,8 @@ img:is([alt=""],[alt*='.jpg'],[alt*='.png'],[alt*='.gif']):hover,
 :is(.is-selected,.noalt) img:is([alt=""],[alt*='.jpg'],[alt*='.png'],[alt*='.gif']),
 img.noalt,
 img[aria-hidden="true"],
-[aria-hidden="true"] img {
+[aria-hidden="true"] img,
+#wpadminbar img {
 	filter: var(--blur-no-alt--filter--hover, blur(0px) ) !important; 
 	outline: var(--blur-no-alt--outline--hover, 0 ) !important;
 }
@@ -22,7 +23,7 @@ img[aria-hidden="true"],
 	clip-path: var(--blur-no-alt--clip-path, inset(0)) !important;
 	filter: var(--blur-no-alt--filter, blur(8px)) !important;
 	outline: var(--blur-no-alt--outline, 10px solid red) !important;
-	outline-offset: var(--blur-no-alt--outline, 10px solid red) !important
+	outline-offset: var(--blur-no-alt--outline-offset, 10px solid red) !important;
 	transition: var(--blur-no-alt--transition, filter .125s, outline .125s) !important;
 }
 
