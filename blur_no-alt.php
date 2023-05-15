@@ -62,10 +62,15 @@ class BlurNoAltMessageDisplay {
 	 */
 	public function blur_no_alt_message_display_add_plugin_page() {
 		add_options_page(
+			// page title
 			esc_html__( 'Blur No-Alt Settings', 'blur-no-alt' ),
+			// menu title
 			esc_html__( 'Blur No-Alt', 'blur-no-alt' ),
+			// capability required to edit settings
 			'manage_options',
+			// slug of options page
 			'blur-no-alt-message-display',
+			// callback to create output for options page
 			array( $this, 'blur_no_alt_message_display_create_admin_page' ),
 		);
 	}
@@ -94,7 +99,9 @@ class BlurNoAltMessageDisplay {
 	 */
 	public function blur_no_alt_message_display_page_init() {
 		register_setting(
+			// option group
 			'blur_no_alt_message_display_option_group',
+			// option name
 			'blur_no_alt_message_display_option_name',
 			array(
 				'description'       => esc_html_x( 'All settings for the Blur No-Alt plugin', 'Description property of register_setting function', 'blur-no-alt' ),
@@ -105,32 +112,50 @@ class BlurNoAltMessageDisplay {
 		);
 
 		add_settings_section(
+			// section id
 			'blur_no_alt_message_display_setting_section',
+			// section title
 			esc_html__( 'Editor Settings', 'blur-no-alt' ),
+			// no callback because no content between title and setting
 			false,
+			// slug of settings page to display section
 			'blur-no-alt-message-display-admin'
 		);
 
 		add_settings_section(
+			// section id
 			'blur_no_alt_front_end_blur_setting_section',
+			// section title
 			esc_html__( 'Front-end Settings', 'blur-no-alt' ),
+			// callback to output info about capabilities filter
 			array( $this, 'blur_no_alt_front_end_section_callback' ),
+			// slug of settings page to display section
 			'blur-no-alt-message-display-admin',
 		);
 
 		add_settings_field(
+			// setting id
 			'show_or_hide_0',
+			// setting title showed in adjacent table cell
 			esc_html__( 'Message above Block Editor title explaining blurred images', 'blur-no-alt' ),
+			// callback to output checkbox
 			array( $this, 'show_or_hide_setting_callback' ),
+			// slug of settings page to display setting
 			'blur-no-alt-message-display-admin',
+			// section id to display setting
 			'blur_no_alt_message_display_setting_section'
 		);
 
 		add_settings_field(
+			// setting id
 			'blur_no_alt_on_front',
+			// setting title showed in adjacent table cell
 			esc_html__( 'EXPERIMENTAL! Front-end blurred images', 'blur-no-alt' ),
+			// callback to output checkbox
 			array( $this, 'blur_no_alt_on_front_setting_callback' ),
+			// slug of settings page to display setting
 			'blur-no-alt-message-display-admin',
+			// section id to display setting
 			'blur_no_alt_front_end_blur_setting_section'
 		);
 	}
