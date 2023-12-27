@@ -1,6 +1,6 @@
 <?php
 /**
- * Blur No-Alt
+ * Blur Missing Alt Text
  *
  * @package     blur-missing-alt-text
  * @author      Mark Root-Wiley
