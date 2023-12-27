@@ -1,9 +1,9 @@
 # Blur No-Alt
 
-Author: [Kerri Hicks](https://kerri.is)  
-Contributors: [Mark Root-Wiley](https://MRWweb.com)  
-Stable tag: 0.93
-Tested up to: 6.2  
+Author: [Mark Root-Wiley](https://MRWweb.com)
+Contributors: [Kerri Hicks](https://kerri.is)  
+Stable tag: 1.0.0
+Tested up to: 6.4
 License: GPLv3 or later  
 License URI: https://www.gnu.org/licenses/gpl-3.0.html  
 

@@ -1,12 +1,25 @@
 <?xml version="1.0"?>
-<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Blur No-Alt" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd">
-	<description>Apply WP code sniffs with minor customizations to the Blur No-Alt PHP plugin file.</description>
-
-    <file>./blur_no-alt.php</file>
-
-    <rule ref="WordPress">
-        <exclude name="WordPress.Files.Filename"/>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         name="Blur No-Alt"
+         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd">
+    <description>Apply WordPress code sniffs.</description>
+    <file>./blur-missing-alt-text.php</file>
+    <config name="minimum_supported_wp_version"
+            value="6.4" />
+    <rule ref="WordPress.WP.I18n">
+        <properties>
+            <property name="text_domain"
+                      type="array">
+                <element value="blur-missing-alt-text" />
+            </property>
+        </properties>
     </rule>
-
-    <config name="minimum_supported_wp_version" value="5.0"/>
+    <rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+        <properties>
+            <property name="prefixes"
+                      type="array">
+                <element value="bmat" />
+            </property>
+        </properties>
+    </rule>
 </ruleset>
