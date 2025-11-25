@@ -3,7 +3,7 @@
 Author: [Kerri Hicks](https://kerri.is)  
 Contributors: [Mark Root-Wiley](https://MRWweb.com)  
 Stable tag: 0.92  
-Tested up to: 6.0  
+Tested up to: 6.0  (not yet compatible with 6.8)
 License: GPLv3 or later  
 License URI: https://www.gnu.org/licenses/gpl-3.0.html  
 
